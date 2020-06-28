@@ -1,0 +1,14 @@
+<ng-container *ngIf="users$ | async as users">
+  <div class="flexbox">
+    <div *ngFor="let user of users" class="card my-2 mx-2" style="width: 18rem;">
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <div class="card-body">
+        <h5 class="card-title">{{ user.name }}</h5>
+        <hr>
+        <p class="card-text" style="max-height: 50px; height: 50px;">{{ user.company?.catchPhrase }}</p>
+        <hr>
+        <a [routerLink]="user.id" class="btn btn-primary">Details</a>
+      </div>
+    </div>
+  </div>
+</ng-container>
